@@ -15,6 +15,8 @@
         <module>dubbo-demo-provider</module>
         <!-- 服务消费者 -->
         <module>dubbo-demo-consumer</module>
+        <!-- jdk-spi 测试 -->
+        <module>jdk-spi</module>
     </modules>
 
     <build>
