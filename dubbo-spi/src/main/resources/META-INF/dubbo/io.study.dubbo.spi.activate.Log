@@ -1,0 +1,5 @@
+noCondition=io.study.dubbo.spi.activate.NoCondition
+singleGroup=io.study.dubbo.spi.activate.SingleGroup
+multiGroup=io.study.dubbo.spi.activate.MultiGroup
+singleValue=io.study.dubbo.spi.activate.SingleValue
+multiValue=io.study.dubbo.spi.activate.MultiValue

@@ -17,6 +17,7 @@
         <module>dubbo-demo-consumer</module>
         <!-- jdk-spi 测试 -->
         <module>jdk-spi</module>
+        <module>dubbo-spi</module>
     </modules>
 
     <build>

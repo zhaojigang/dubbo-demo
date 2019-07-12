@@ -1,0 +1,2 @@
+logback=io.study.dubbo.spi.basic.Logback
+log4j=io.study.dubbo.spi.basic.Log4j

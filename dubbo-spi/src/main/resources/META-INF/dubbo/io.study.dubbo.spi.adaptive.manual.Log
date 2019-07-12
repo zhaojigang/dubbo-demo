@@ -1,0 +1,3 @@
+log4j=io.study.dubbo.spi.adaptive.manual.Log4j
+logback=io.study.dubbo.spi.adaptive.manual.Logback
+adaptive=io.study.dubbo.spi.adaptive.manual.AdaptiveLog
