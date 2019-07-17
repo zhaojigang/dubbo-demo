@@ -15,7 +15,10 @@ public class Logback implements Log {
      */
     private Book book;
 
-    public void setBook(Book book) {
+    /**
+     * 对于 SPI 注入方式来讲，setXxx 中的 Xxx 没有任何作用，因为注入的都是 SPI 接口的适配类而不是具体的实现类
+     */
+    public void setBookx(Book book) {
         this.book = book;
     }
 

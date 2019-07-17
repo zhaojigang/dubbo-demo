@@ -1,2 +1,2 @@
-io.study.dubbo.spi.adaptive.auto.Logback
-io.study.dubbo.spi.adaptive.auto.Log4j
+logback=io.study.dubbo.spi.adaptive.auto.Logback
+log4j=io.study.dubbo.spi.adaptive.auto.Log4j

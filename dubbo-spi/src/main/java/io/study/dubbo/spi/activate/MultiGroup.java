@@ -2,7 +2,7 @@ package io.study.dubbo.spi.activate;
 
 import com.alibaba.dubbo.common.extension.Activate;
 
-@Activate(group = {"provider", "consumer"})
+@Activate(group = {"provider", "consumer"}, order = 2)
 public class MultiGroup implements Log {
     @Override
     public void execute() {

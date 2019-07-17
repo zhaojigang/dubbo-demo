@@ -12,7 +12,5 @@ public class Logback implements Log {
     }
 
     @Override
-    public void test() {
-
-    }
+    public void test() {}
 }

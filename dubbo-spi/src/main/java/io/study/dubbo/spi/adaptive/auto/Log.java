@@ -15,7 +15,7 @@ public interface Log {
      * @Adaptive 注解中的 String[] value() 代表 url 中用于获取 SPI 实现类的 key 的参数名：
      *
      * eg. 本例的配置生成的代码如下
-     * String extName = url.getParameter("xxx", url.getParameter("ooo", "logback")); // 其中 logback 是默认值
+     * String extName = url.getParameter("xxx", url.getParameter("ooo", "logback")); // 其中 logback 是默认值, 即先获取 Url 中key为xxx的值，如果该值存在，则使用该值去 SPI 配置文件中获取对应的实现
      * Log extension = ExtensionLoader.getExtensionLoader(Log.class).getExtension(extName);
      */
     @Adaptive({"xxx","ooo"})

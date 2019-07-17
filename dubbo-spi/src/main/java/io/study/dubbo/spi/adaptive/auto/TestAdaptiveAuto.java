@@ -10,6 +10,6 @@ public class TestAdaptiveAuto {
         System.out.println("======================= 获取 SPI 适配类（自动生成适配类） =======================");
         Log adaptiveExtension = loader.getAdaptiveExtension();
         URL url = new URL("dubbo", "10.211.55.6", 8080);
-        adaptiveExtension.execute(url);
+        adaptiveExtension.execute(url.addParameter("xxx", "log4j")); // this is log4j! 10.211.55.6
     }
 }

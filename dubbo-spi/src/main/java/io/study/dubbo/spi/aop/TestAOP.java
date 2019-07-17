@@ -7,7 +7,7 @@ public class TestAOP {
         ExtensionLoader<Log> loader = ExtensionLoader.getExtensionLoader(Log.class);
 
         System.out.println("======================= 根据指定名称获取具体的 SPI 实现类（测试 wrapper） =======================");
-        Log logback = loader.getExtension("logback");
+        Log logback = loader.getExtension("logback"); // 最外层的 Wrapper 类实例
         /**
          * 输出
          * LogWrapper2 before

@@ -12,10 +12,8 @@ public class TestSpringIOC {
         SpringExtensionFactory.addApplicationContext(context);
 
         ExtensionLoader<Log> loader = ExtensionLoader.getExtensionLoader(Log.class);
-        System.out.println("======================= 根据指定名称获取具体的 SPI 实现类（测试 spring ioc） =======================");
         // 3. 测试 dubbo spring ioc
         Log logback = loader.getExtension("logback");
-
         logback.execute();
     }
 }

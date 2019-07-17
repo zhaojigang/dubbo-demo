@@ -12,7 +12,5 @@ public class Log4j implements Log {
     }
 
     @Override
-    public void test() {
-
-    }
+    public void test() {}
 }
