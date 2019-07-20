@@ -27,5 +27,10 @@
             <artifactId>dubbo-config-spring</artifactId>
             <version>${dubbo.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo-rpc-dubbo</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
     </dependencies>
 </project>

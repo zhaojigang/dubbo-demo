@@ -18,6 +18,7 @@
         <!-- jdk-spi 测试 -->
         <module>jdk-spi</module>
         <module>dubbo-spi</module>
+        <module>compiler</module>
     </modules>
 
     <build>
