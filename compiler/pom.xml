@@ -10,7 +10,16 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>compiler</artifactId>
 
+    <properties>
+        <dubbo.version>2.6.6</dubbo.version>
+    </properties>
+
     <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo-common</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
