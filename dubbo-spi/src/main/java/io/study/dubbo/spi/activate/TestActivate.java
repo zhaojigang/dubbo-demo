@@ -24,8 +24,8 @@ public class TestActivate {
         List<Log> activateExtension = loader.getActivateExtension(url, values, group);
         /**
          * 输出：
-         * this is multi group!
          * this is single group!
+         * this is multi group!
          */
         activateExtension.forEach(Log::execute);
     }

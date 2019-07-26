@@ -13,12 +13,18 @@
         <module>dubbo-demo-api</module>
         <!-- 服务提供者 -->
         <module>dubbo-demo-provider</module>
+        <!-- 服务提供者2 -->
+        <module>dubbo-demo-provider2</module>
         <!-- 服务消费者 -->
         <module>dubbo-demo-consumer</module>
         <!-- jdk-spi 测试 -->
         <module>jdk-spi</module>
+        <!-- dubbo-spi 测试 -->
         <module>dubbo-spi</module>
+        <!-- 编译器 -->
         <module>compiler</module>
+        <!-- xml 标签 -->
+        <module>xmltag</module>
     </modules>
 
     <build>

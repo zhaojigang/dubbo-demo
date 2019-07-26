@@ -5,20 +5,21 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
     <!-- 应用名，通常与 artifactId 相同即可 -->
-    <dubbo:application name="demo-consumer"/>
+    <dubbo:application name="demo-provider2"/>
     <!-- 注册中心 -->
-    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
-    <!-- consumer 全局配置 -->
-    <dubbo:consumer timeout="6000"/>
-    <!-- 生成远端服务的代理对象, 之后可以向调用本地服务一样调用远端服务 -->
-    <dubbo:reference id="demoService" check="false" interface="com.alibaba.dubbo.demo.DemoService" filter="tracing"/>
-    <dubbo:reference id="helloService" check="false" interface="com.alibaba.dubbo.demo.HelloService" filter="tracing"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181" check="false"/>
+    <!-- 暴露协议 -->
+    <dubbo:protocol name="dubbo" port="20881"/>
+    <!-- spring bean -->
+    <bean id="helloService" class="com.alibaba.dubbo.demo.provider.HelloServiceImpl"/>
+    <!-- 声明暴露的服务 -->
+    <dubbo:service interface="com.alibaba.dubbo.demo.HelloService" ref="helloService" filter="tracing"/>
     <!-- zipkin -->
     <bean id="sender" class="zipkin2.reporter.beans.OkHttpSenderFactoryBean">
         <property name="endpoint" value="http://127.0.0.1:9411/api/v2/spans"/>
     </bean>
     <bean id="tracing" class="brave.spring.beans.TracingFactoryBean">
-        <property name="localServiceName" value="demo-consumer"/>
+        <property name="localServiceName" value="demo-provider2"/>
         <property name="spanReporter">
             <bean class="zipkin2.reporter.beans.AsyncReporterFactoryBean">
                 <property name="sender" ref="sender"/>

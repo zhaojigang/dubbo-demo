@@ -12,6 +12,8 @@
     <artifactId>dubbo-demo-consumer</artifactId>
     <properties>
         <dubbo.version>2.6.6</dubbo.version>
+        <brave.version>5.6.9</brave.version>
+        <zipkin-reporter.version>2.10.0</zipkin-reporter.version>
     </properties>
 
     <dependencies>
@@ -50,6 +52,33 @@
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo-serialization-hessian2</artifactId>
             <version>${dubbo.version}</version>
+        </dependency>
+        <!-- 全链路追踪 -->
+        <dependency>
+            <groupId>io.zipkin.brave</groupId>
+            <artifactId>brave-instrumentation-dubbo-rpc</artifactId>
+            <version>${brave.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.alibaba</groupId>
+                    <artifactId>dubbo</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.brave</groupId>
+            <artifactId>brave-spring-beans</artifactId>
+            <version>${brave.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.brave</groupId>
+            <artifactId>brave-context-slf4j</artifactId>
+            <version>${brave.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.reporter2</groupId>
+            <artifactId>zipkin-sender-okhttp3</artifactId>
+            <version>${zipkin-reporter.version}</version>
         </dependency>
     </dependencies>
 </project>

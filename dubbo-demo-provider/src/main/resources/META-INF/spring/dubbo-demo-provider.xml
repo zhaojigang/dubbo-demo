@@ -13,5 +13,26 @@
     <!-- spring bean -->
     <bean id="demoService" class="com.alibaba.dubbo.demo.provider.DemoServiceImpl"/>
     <!-- 声明暴露的服务 -->
-    <dubbo:service interface="com.alibaba.dubbo.demo.DemoService" ref="demoService"/>
+    <dubbo:service interface="com.alibaba.dubbo.demo.DemoService" ref="demoService" filter="tracing"/>
+    <!-- zipkin -->
+    <bean id="sender" class="zipkin2.reporter.beans.OkHttpSenderFactoryBean">
+        <property name="endpoint" value="http://127.0.0.1:9411/api/v2/spans"/>
+    </bean>
+    <bean id="tracing" class="brave.spring.beans.TracingFactoryBean">
+        <property name="localServiceName" value="demo-provider"/>
+        <property name="spanReporter">
+            <bean class="zipkin2.reporter.beans.AsyncReporterFactoryBean">
+                <property name="sender" ref="sender"/>
+                <!-- wait up to half a second for any in-flight spans on close -->
+                <property name="closeTimeout" value="500"/>
+            </bean>
+        </property>
+        <property name="currentTraceContext">
+            <bean class="brave.spring.beans.CurrentTraceContextFactoryBean">
+                <property name="scopeDecorators">
+                    <bean class="brave.context.slf4j.MDCScopeDecorator" factory-method="create"/>
+                </property>
+            </bean>
+        </property>
+    </bean>
 </beans>

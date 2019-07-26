@@ -1,0 +1,25 @@
+<xsd:schema
+        xmlns="http://io.study/schema"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://io.study/schema">
+    <!-- 归类属性 -->
+    <xsd:complexType name="providerType">
+        <xsd:attribute name="id" type="xsd:string">
+            <!-- 注释 -->
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ The provider id. ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="timeout" type="xsd:int">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ The provider timeout. ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    <!-- 标签元素 -->
+    <xsd:element name="provider" type="providerType">
+        <xsd:annotation>
+            <xsd:documentation><![CDATA[ provider 元素的的文档说明 ]]></xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+</xsd:schema>

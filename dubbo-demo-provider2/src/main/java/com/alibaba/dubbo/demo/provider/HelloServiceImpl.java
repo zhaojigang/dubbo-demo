@@ -1,16 +1,16 @@
 package com.alibaba.dubbo.demo.provider;
 
-import com.alibaba.dubbo.demo.DemoService;
+import com.alibaba.dubbo.demo.HelloService;
 
-public class DemoServiceImpl implements DemoService {
+public class HelloServiceImpl implements HelloService {
     @Override
-    public String sayHello(String name) {
+    public String sayHi(String name) {
         try {
-            Thread.sleep(4000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         System.out.println("provider received: " + name);
-        return "hello, " + name;
+        return "hi, " + name;
     }
 }
